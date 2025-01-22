@@ -1588,7 +1588,7 @@
     {
       "JP": "`真人@「リトルバスターズジャンパーなるものを作るらしい。わけがわからねぇ」",
       "EN": "`Masato@❝He said he was making a Little Busters jumper. That doesn't make any sense.❞",
-      "Translation": "`真人@「好像是Litle Busters夹克衫。完全不知道是啥」"
+      "Translation": "`真人@「好像是Little Busters夹克衫。完全不知道是啥」"
     },
     {
       "JP": "`理樹@「それはなに？　ユニフォームみたいな？」",
@@ -1783,7 +1783,7 @@
     {
       "JP": "`クド@「どーぶるーう゛ぇーちゃるー」",
       "EN": "`Kud@❝Добрый вечер.❞",
-      "Translation": "`库特@「どーぶるーう゛ぇーちゃるー」"
+      "Translation": "`库特@「Добрый вечер」"
     },
     {
       "JP": "`クド@「井ノ原さん、おひさしぶりです」",
@@ -2358,12 +2358,12 @@
     {
       "JP": "`鈴@「…そして寝てるあたしにキスをしようとするのが一匹」",
       "EN": "`Rin@❝...And there's a kitten right here that tried to kiss me while I was asleep.❞",
-      "Translation": "`铃@「…而且还有一匹想在我睡的时候吻我」"
+      "Translation": "`铃@「…而且还有一只小猫想在我睡觉的时候吻我」"
     },
     {
       "JP": "ひ、匹って。",
       "EN": "S-she called me a kitten.",
-      "Translation": "一匹是在说我。"
+      "Translation": "小猫…是在说我啊。"
     },
     {
       "JP": "`鈴@「めー」",

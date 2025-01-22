@@ -684,7 +684,7 @@
     {
       "JP": "今僕らが居るのは、リトルバスターズが結成されるよりも以前の過去、僕たちの『始まり』の場所。",
       "EN": "We are currently at the ❛beginning❜ that precedes the forming of the Little Busters.",
-      "Translation": "现在我们所在的地方，是在结成之前的『开始』的地方。"
+      "Translation": "现在我们所在的地方，是在组建Little Busters之前的『开始』的地方。"
     },
     {
       "JP": "そして目指すは、僕たちに『何かが起きた』場所。",
@@ -724,7 +724,7 @@
     {
       "JP": "僕が、リトルバスターズを結成すればいい。",
       "EN": "I'll form the Little Busters myself.",
-      "Translation": "我只要结成就可以了。"
+      "Translation": "我只要组建Little Busters就可以了。"
     },
     {
       "JP": "そういうことだ。",
@@ -834,7 +834,7 @@
     {
       "JP": "`理樹@「リトルバスターズでやってたことと正反対じゃん…」",
       "EN": "`Riki@❝That's the total opposite of the Little Busters' motto...❞",
-      "Translation": "`理树@「那不是和做的事情完全相反吗…」"
+      "Translation": "`理树@「那不是和Little Busters做的事情完全相反吗…」"
     },
     {
       "JP": "`鈴@「うん」",
@@ -1019,17 +1019,17 @@
     {
       "JP": "`理樹@「うん、今教えたからね。今はふたりでリトルバスターズだ」",
       "EN": "`Riki@❝Yeah, that's natural because I only told you just now. The two of us now make the Little Busters.❞",
-      "Translation": "`理树@「嗯，因为我刚刚才告诉你。现在是两个人的」"
+      "Translation": "`理树@「嗯，因为我刚刚才告诉你。现在是两个人的Little Busters」"
     },
     {
       "JP": "`鈴@「それまでは理樹ひとりでリトルバスターだったのか？」",
       "EN": "`Rin@❝Then you were a Little Buster by yourself until now?❞",
-      "Translation": "`铃@「在那之前是理树一个人的吗？」"
+      "Translation": "`铃@「在那之前Little Busters是理树一个人的吗？」"
     },
     {
       "JP": "`理樹@「いや、今ふたりでリトルバスターズを作った。へんなところに食いついてこないで」",
       "EN": "`Riki@❝No, I told you we've just formed the Little Busters. No nitpicking.❞",
-      "Translation": "`理树@「不是，是现在两个人结成的。不要在奇怪的地方钻牛角尖」"
+      "Translation": "`理树@「不是，Little Busters是现在两个人组建的。不要在奇怪的地方钻牛角尖」"
     },
     {
       "JP": "`鈴@「うん」",
@@ -1549,7 +1549,7 @@
     {
       "JP": "ふたりじゃリトルバスターズじゃない。",
       "EN": "Us two aren't enough to make the Little Busters.",
-      "Translation": "两个人的话，就不是了。"
+      "Translation": "两个人的话，就不是Little Busters了。"
     },
     {
       "JP": "僕はしばらく呆然としていたが、もうひとつ鈴に告げなくてはならないことを思い出し、鈴に向き直る。",
@@ -1574,7 +1574,7 @@
     {
       "JP": "`理樹@「ふたりでリトルバスターズでしょ？　だから、ふたりはいつも一緒にいるんだ」",
       "EN": "`Riki@❝The Little Busters can only exist when we are together. Hence, we have to be together all the time.❞",
-      "Translation": "`理树@「我们两个人是吧？所以我会一直和你在一起的」"
+      "Translation": "`理树@「我们两个人是Little Busters吧？所以我会一直和你在一起的」"
     },
     {
       "JP": "`鈴@「なにぃ…」",
@@ -1584,12 +1584,12 @@
     {
       "JP": "`鈴@「じゃあぬける。理樹ひとりでリトルバスターにもどってくれ…」",
       "EN": "`Rin@❝Then I'm out. You be the Little Buster by yourself...❞",
-      "Translation": "`铃@「那我退出。理树你一个人回去当吧…」"
+      "Translation": "`铃@「那我退出。理树你一个人回去当Little Busters吧…」"
     },
     {
       "JP": "`理樹@「そんな簡単に抜けちゃ駄目だよ、それにリトルバスターというものはないんだってば」",
       "EN": "`Riki@❝You can't get out that easily. And there isn't such a thing as a Little Buster.❞",
-      "Translation": "`理树@「不要那么轻易的就退出啊，而且根本没有这种东西啊」"
+      "Translation": "`理树@「不要那么轻易的就退出啊，而且根本没有Little Busters这种东西啊」"
     },
     {
       "JP": "`鈴@「だって、そうなったら、もう、ひーくんやおーちゃんや、てづっちやコバと遊べなくなる」",
