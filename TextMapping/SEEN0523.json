@@ -16856,12 +16856,12 @@
     {
       "JP": "掃除する$d放っておく$dさすらう",
       "EN": "Clean up the room$dLeave it as it is$dWander",
-      "Translation": "整理宿舍$d放着不管$d徘徊"
+      "Translation": "整理活動室$d放着不管$d徘徊"
     },
     {
       "JP": "掃除する$d放っておく",
       "EN": "Clean up the room$dLeave it as it is",
-      "Translation": "整理宿舍$d放着不管"
+      "Translation": "整理活動室$d放着不管"
     },
     {
       "JP": "話しかける$d学食に急ぐ",
