@@ -274,7 +274,7 @@
     {
       "JP": "`理樹@「いくよっ」",
       "EN": "`Riki@❝I'll go.❞",
-      "Translation": "`理树@「我会去的。」"
+      "Translation": "`理树@「我会去的」"
     },
     {
       "JP": "はぁ…はぁ…。謎の動悸が…。",
@@ -314,7 +314,7 @@
     {
       "JP": "しまったああぁぁーーっ!!",
       "EN": "Dammit!!",
-      "Translation": "糟糕啊啊啊ーーっ！！"
+      "Translation": "糟糕啊啊啊ーー！！"
     },
     {
       "JP": "誤解がさらに大きな誤解へと!!",
@@ -2379,7 +2379,7 @@
     {
       "JP": "`朱鷺戸@「あーっはっはっはっ…次はどいつを頂こうかしら…」",
       "EN": "`Tokido@❝Ahahaha... which one should I get next...❞",
-      "Translation": "`朱鹭户@「啊　哈　哈　哈…下一个抓哪个好呢…」"
+      "Translation": "`朱鹭户@「啊－哈哈哈…下一个抓哪个好呢…」"
     },
     {
       "JP": "こういう時でも、その笑い方するんだ。",
@@ -2614,12 +2614,12 @@
     {
       "JP": "`朱鷺戸@$S028「はは…滑稽でしょ、ゲームに熱中して、背後から刺されまくってても気づかないぐらいだったんだもの、どんなスパイよ、馬鹿丸出しね、笑うがいいわ、ほら、笑いなさいよ、あーーーっはっはっはっ！って」",
       "EN": "`Tokido@$S024❝Haha, how funny. I got so caught up in a game that I wouldn't have noticed someone stabbing me in the back. What kind of spy am I? I'm a complete idiot. It's okay to laugh. Come on, go ahead and laugh. ❛Ahahaha.❜❞",
-      "Translation": "`朱鹭户@$S028「哈哈…很滑稽吧，沉迷在游戏中，到了即使在背后被刺了也不会注意到的程度，这是什么样的间谍啊，完全是个笨蛋嘛，你笑就好了啊，喂，你给我笑啊，啊　哈　哈　哈这样的笑啊！」"
+      "Translation": "`朱鹭户@$S028「哈哈…很滑稽吧，沉迷在游戏中，到了即使在背后被刺了也不会注意到的程度，这是什么样的间谍啊，完全是个笨蛋嘛，你笑就好了啊，喂，你给我笑啊，啊－哈哈哈这样的笑啊！」"
     },
     {
       "JP": "`朱鷺戸@「あーっはっはっはっ！」",
       "EN": "`Tokido@❝Ahahaha!❞",
-      "Translation": "`朱鹭户@「啊　哈　哈　哈！」"
+      "Translation": "`朱鹭户@「啊－哈哈哈！」"
     },
     {
       "JP": "`理樹@「休みの日は休みの日で思いっきり遊ぶでいいじゃない？」",
