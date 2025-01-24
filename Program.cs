@@ -339,11 +339,12 @@
             }
             Directory.CreateDirectory(PendingReplacePath);
 
+            string TemplateDir = Path.Combine(LBEEGamePath, "files", "template");
             string LBEEScriptPak = Path.Combine(LBEEGamePath, @"files\SCRIPT.PAK");
             string LBEEFontPak = Path.Combine(LBEEGamePath, @"files\FONT.PAK");
-            string TemplateLBEEScriptPak = Path.Combine(LBEEGamePath, @"files\template\SCRIPT.PAK");
-            string TemplateLBEEFontPak = Path.Combine(LBEEGamePath, @"files\template\FONT.PAK");
-            if (!Directory.Exists(Path.Combine(LBEEGamePath, @"files\template")))
+            string TemplateLBEEScriptPak = Path.Combine(TemplateDir, "SCRIPT.PAK");
+            string TemplateLBEEFontPak = Path.Combine(TemplateDir, "FONT.PAK");
+            if (!Directory.Exists(TemplateDir))
             {
                 if (File.Exists(LBEEScriptPak) && File.Exists(LBEEFontPak))
                 {
@@ -529,7 +530,7 @@
                 Directory.Delete(PendingReplacePath, true);
                 Directory.CreateDirectory(PendingReplacePath);
                 var ImgPakName = Path.GetFileName(ImgPakDir);
-                string TemplatePak = Path.Combine(LBEEGamePath, $"files\\template\\{ImgPakName}.PAK");
+                string TemplatePak = Path.Combine(TemplateDir, $"{ImgPakName}.PAK");
                 string SourcePak = Path.Combine(LBEEGamePath, $"files\\{ImgPakName}.PAK");
                 if (!File.Exists(SourcePak))
                 {
@@ -674,7 +675,14 @@
                 }
                 File.WriteAllBytes(LBEE_EXE, LBEEBinaries);
             }*/
-            MessageBox(IntPtr.Zero, "汉化完成。", "LBEE_TranslationPatch", 0);
+#if RELEASE
+            Directory.Delete(TemplateDir, true);
+#endif
+            {
+                string Notice = "汉化完成。\n如果需要恢复原版，请使用Steam验证游戏文件完整性，会自动还原被修改的文件。";
+                Console.WriteLine(Notice);
+                MessageBox(IntPtr.Zero, Notice, "LBEE_TranslationPatch", 0);
+            }
         }
     }
 
