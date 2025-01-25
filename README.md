@@ -2,6 +2,7 @@
 ## Little Busters English Edition 汉化程序
 
 通过参考[LuckSystem](https://github.com/wetor/LuckSystem)和[lbee-utils](https://github.com/G2-Games/lbee-utils)编写  
+感谢[lmr0420](https://github.com/lmr0420)协助捉虫  
 
 ![Preview](Preview/LBEE.jpg)  
 
