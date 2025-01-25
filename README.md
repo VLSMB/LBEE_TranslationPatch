@@ -7,6 +7,7 @@
 
 可参考的翻译位于[TranslationText/LB_EX_Unicode](TranslationText/LB_EX_Unicode)  
 待翻译的文本位于[TextMapping](TextMapping), 此文件夹下的Json会被程序导入到游戏内  
+待翻译的图片位于[ImageMapping](ImageMapping)，此文件夹下的图片会被程序导入到游戏内，目前翻译了和剧情相关的图片文本。
 [Release页面](https://github.com/Jack-Myth/LBEE_TranslationPatch/releases)有一个或许对填写文本有帮助的小工具  
 
 前往[Release页面](https://github.com/Jack-Myth/LBEE_TranslationPatch/releases)下载已编译的汉化程序  
