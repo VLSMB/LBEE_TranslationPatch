@@ -1014,7 +1014,7 @@
     {
       "JP": "コン…$dボールの下に当たって、小さなフライを打ち上げてしまった…",
       "EN": "Slam...\nThe bat hits the bottom of the ball, it's a fly ball...",
-      "Translation": "砰…球棒击中了球的底部，打出了一个小飞球…"
+      "Translation": "砰…$d球棒击中了球的底部，打出了一个小飞球…"
     },
     {
       "JP": "",
@@ -3100,7 +3100,7 @@
     {
       "JP": "カキーン！$d打った。外野に向かって打球が高く上がる。",
       "EN": "Slam!\n It connects. A high fly to the outfield.",
-      "Translation": "砰！打中了。球高高飞向外野。"
+      "Translation": "砰！$d打中了。球高高飞向外野。"
     },
     {
       "JP": "",
@@ -3205,7 +3205,7 @@
     {
       "JP": "キーン！$d打った。外野に向かって打球が飛ぶ。",
       "EN": "Slam!\nIt connects. A fly toward the outfield.",
-      "Translation": "砰！打中了。球飞向外野。"
+      "Translation": "砰！$d打中了。球飞向外野。"
     },
     {
       "JP": "",
