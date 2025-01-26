@@ -16781,12 +16781,12 @@
     {
       "JP": "しばらく見守る$d話を進める",
       "EN": "Watch for a while$dLook for a new task straight away",
-      "Translation": "静静地看着$d打招呼"
+      "Translation": "静静地看着$d直接找新任務"
     },
     {
       "JP": "やめさせる$d手伝い続ける",
       "EN": "Quit$dKeep helping her out",
-      "Translation": "不干了$d繼續"
+      "Translation": "不干了$d繼續任務"
     },
     {
       "JP": "[(0),]おまえらはＥＸＩＬＥか！！$d邪魔だろ！！$dおまえはおじいさんか！！",
