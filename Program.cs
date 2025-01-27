@@ -278,6 +278,16 @@
 
         static void Main(string[] args)
         {
+            // 检查必须的组件
+            if (!(File.Exists(".\\Files\\lucksystem.exe") && 
+                File.Exists(".\\Files\\czutil.exe")&&
+                File.Exists(".\\Files\\Charset.txt")&&
+                File.Exists(".\\Files\\OPCODE.txt")))
+            {
+                string Notice = "组件缺失，你是否将补丁文件夹完整解压出来了？";
+                Console.Error.WriteLine(Notice);
+            }
+
             int DescriptionWaitingTime = 20;
             for (int i = 0; i < args.Count(); i++)
             {
@@ -360,7 +370,7 @@
             }
 
             // Assuming LuckSystem is a separate executable that needs to be run
-            Process.Start(".\\Files\\lucksystem.exe", $"pak extract -i \"{TemplateLBEEScriptPak}\" -o {Path.Combine(TMPPath, "ScriptFileList.txt")} --all {ExtractedScriptPath}").WaitForExit();
+            Process.Start(".\\Files\\lucksystem.exe", $"pak extract -i \"{TemplateLBEEScriptPak}\" -o \"{Path.Combine(TMPPath, "ScriptFileList.txt")}\" --all \"{ExtractedScriptPath}\"").WaitForExit();
 
             Operators = File.ReadAllText(".\\Files\\OPCODE.txt").ReplaceLineEndings().Split(Environment.NewLine);
             var scriptFiles = Directory.GetFiles(ExtractedScriptPath);
@@ -420,7 +430,7 @@
             Process.Start("Files\\lucksystem.exe", $"pak replace -s \"{TemplateLBEEScriptPak}\" -i \"{ExtractedScriptPath}\" -o \"{LBEEScriptPak}\"").WaitForExit();
 
             // 解开字体
-            Process.Start("Files\\lucksystem.exe", $"pak extract -i \"{TemplateLBEEFontPak}\" -o {Path.Combine(TMPPath, "FontFileList.txt")} --all {ExtractedFontPath}").WaitForExit();
+            Process.Start("Files\\lucksystem.exe", $"pak extract -i \"{TemplateLBEEFontPak}\" -o \"{Path.Combine(TMPPath, "FontFileList.txt")}\" --all \"{ExtractedFontPath}\"").WaitForExit();
 
             // 重绘字体
             var FontSize = new int[]
@@ -510,8 +520,8 @@
                 // 针对Template进行重绘，然后复制到各个字体
                 // 如果每个字体都进行重绘，那么重绘后的游戏会崩溃，但只用一份的话就正常，很奇怪，不清楚原因
                 // 看起来很像是字体过大了，这里指定一下ReplaceIndex，把一部分原有字体替换掉
-                Process.Start("Files\\lucksystem.exe", $"font edit -s \"{ExtractedFontPath}\\{FontTemplate}{fSize}\" -i {FontReplaceIndex+AddOffset} -S \"{ExtractedFontPath}\\info{fSize}\" -f {TargetFontPath} -c {AllNewCharFile} -o {Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}.png")} -O {Path.Combine(PendingReplacePath, $"info{fSize}")}").WaitForExit();
-                Process.Start("Files\\czutil.exe", $"replace \"{ExtractedFontPath}\\{FontTemplate}{fSize}\" {Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}.png")} {Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}")}").WaitForExit();
+                Process.Start("Files\\lucksystem.exe", $"font edit -s \"{ExtractedFontPath}\\{FontTemplate}{fSize}\" -i {FontReplaceIndex+AddOffset} -S \"{ExtractedFontPath}\\info{fSize}\" -f \"{TargetFontPath}\" -c \"{AllNewCharFile}\" -o \"{Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}.png")}\" -O \"{Path.Combine(PendingReplacePath, $"info{fSize}")}\"").WaitForExit();
+                Process.Start("Files\\czutil.exe", $"replace \"{ExtractedFontPath}\\{FontTemplate}{fSize}\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}.png")}\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}")}\"").WaitForExit();
                 File.Delete(Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}.png"));
                 foreach (var fName in FontName)
                 {
@@ -555,7 +565,7 @@
                     Directory.Delete(CzTempPath, true);
                     Directory.CreateDirectory(CzTempPath);
                 }
-                Process.Start("Files\\lucksystem.exe", $"pak extract -i \"{TemplatePak}\" -o {ImageFileListTxt} --all {CzTempPath}").WaitForExit();
+                Process.Start("Files\\lucksystem.exe", $"pak extract -i \"{TemplatePak}\" -o \"{ImageFileListTxt}\" --all \"{CzTempPath}\"").WaitForExit();
 
                 // czutil的速度还是比较慢的，这里使用多线程处理
                 int ProcessedImg = 0;
