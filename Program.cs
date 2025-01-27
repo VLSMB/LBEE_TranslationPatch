@@ -286,6 +286,8 @@
             {
                 string Notice = "组件缺失，你是否将补丁文件夹完整解压出来了？";
                 Console.Error.WriteLine(Notice);
+                MessageBox(IntPtr.Zero, Notice, "LBEE_TranslationPatch", 0);
+                return;
             }
 
             int DescriptionWaitingTime = 20;
