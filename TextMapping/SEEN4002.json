@@ -188,7 +188,7 @@
     {
       "JP": "`クド@「り、リキ？　何してるですか？」",
       "EN": "`Kud@❝Ri-Riki, what are you doing?❞",
-      "Translation": "`库特@「里、理树？你在干什么？」"
+      "Translation": "`库特@「理、理树？你在干什么？」"
     },
     {
       "JP": "`理樹@「実は、ちょこっと前から気になってたんだ」",
@@ -2528,7 +2528,7 @@
     {
       "JP": "`クド@「大使館のひとです。おかあさんは、テヴアじゃ有名なひとだから」",
       "EN": "`Kud@❝From the Tevuan Embassy. My mother is well-known over there.❞",
-      "Translation": "`库特@「是大使馆的人给我的。因为妈妈她，在是很有名的人」"
+      "Translation": "`库特@「是大使馆的人给我的。因为妈妈她，在Tevuan是很有名的人」"
     },
     {
       "JP": "`クド@「娘の私のところにも連絡があったです。安否確認をしにいくのならば、と…」",
@@ -2968,7 +2968,7 @@
     {
       "JP": "`理樹@「うん。本当だよ。これはクドの――クドにしか出来ない仕事（ミッション）なんだから」",
       "EN": "`Riki@❝Absolutely. This is―― a mission that only you can undertake.❞",
-      "Translation": "`理树@「嗯，真的啊。这是库特的——只有库特才能做到的工作（）啊」"
+      "Translation": "`理树@「嗯，真的啊。这是库特的——只有库特才能做到的工作（mission）啊」"
     },
     {
       "JP": "`クド@「………っ」",
@@ -3088,7 +3088,7 @@
     {
       "JP": "`クド@「気を、つかっていただいたみたいで」",
       "EN": "`Kud@❝I have to thank her for her consideration.❞",
-      "Translation": "`库特@「很久没有换气了呢」"
+      "Translation": "`库特@「总觉得，我很让她费心了」"
     },
     {
       "JP": "`理樹@「…そっか」",
@@ -3503,7 +3503,7 @@
     {
       "JP": "`クド@「ぐっどいぶにんぐ、リキ」",
       "EN": "`Kud@❝Guddo ibuningu, Riki.❞",
-      "Translation": "`库特@「，理树」"
+      "Translation": "`库特@「Guddo ibuningu，理树」"
     },
     {
       "JP": "部室の前で部屋着のクドが立っていた。",
@@ -3868,7 +3868,7 @@
     {
       "JP": "`理樹@「リンゴ、じゃなくってアップルだ、と思うらしいけど」",
       "EN": "`Riki@❝they first think of the word for it in their foreign language, in this case ❛ringo❜ instead of ❛apple.❜❞",
-      "Translation": "`理树@「他首先就不会想到是『苹果』，而是『』」"
+      "Translation": "`理树@「他首先就不会想到是『苹果』，而是『Apple』」"
     },
     {
       "JP": "`理樹@「それが出来ないからダメなのかな」",
@@ -3933,7 +3933,7 @@
     {
       "JP": "`クド@「いっと・いず・あず・ゆー・せい、です」",
       "EN": "`Kud@❝Itto idzu adzu yu- sei.❞",
-      "Translation": "`库特@「，的说」"
+      "Translation": "`库特@「Itto idzu adzu yu- sei，的说」"
     },
     {
       "JP": "クドは笑いながら僕に向かって右手を出した。",
@@ -4473,12 +4473,12 @@
     {
       "JP": "`クド@「ガガーリン少佐も出発するとき同じことをしたらしいのです」",
       "EN": "`Kud@❝Major Gagarin did the same thing when he set out.❞",
-      "Translation": "`库特@「加加林少佐在出发时，似乎也做着同样的事」"
+      "Translation": "`库特@「加加林上校在出发时，似乎也做着同样的事」"
     },
     {
       "JP": "`クド@「少佐のお友達のレオーノフさんが本にそう書いていました」",
       "EN": "`Kud@❝The major's friend Leonov-san said so in a book.❞",
-      "Translation": "`库特@「加加林少佐的朋友列昂诺夫在书里是这么写的」"
+      "Translation": "`库特@「加加林上校的朋友列昂诺夫在书里是这么写的」"
     },
     {
       "JP": "座ると落ち着きますからね、とクド。",
