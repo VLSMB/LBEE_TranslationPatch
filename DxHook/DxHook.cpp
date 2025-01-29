@@ -119,25 +119,40 @@ void DoHook(HINSTANCE hinstDLL)
                 }
             }
         }
-        if (TargetLen < SourceLen)
+        for (DWORD j = 0; j < SectionHeader->Misc.VirtualSize; j++)
         {
-            for (DWORD j = 0; j < SectionHeader->Misc.VirtualSize; j++)
+            bool Matched = true;
+            for (int k = 0; k < SourceLen; k++)
             {
-                bool Matched = true;
-                for (int k = 0; k < SourceLen; k++)
+                if (RDataStart[j + k] != Source[k])
                 {
-                    if (RDataStart[j + k] != Source[k])
+                    Matched = false;
+                    break;
+                }
+            }
+            if (Matched)
+            {
+                if (TargetLen > SourceLen)
+                {
+                    // 检查多出来的字节是否都为00
+                    // 如果都是00的话，直接覆写大概也OK
+                    bool AllEmpty = true;
+                    for (int overFlowIndex = SourceLen; overFlowIndex < TargetLen; overFlowIndex++)
                     {
-                        Matched = false;
+                        if (RDataStart[j + overFlowIndex] != '\0')
+                        {
+                            AllEmpty = false;
+                            break;
+                        }
+                    }
+                    if (!AllEmpty)
+                    {
                         break;
                     }
                 }
-                if (Matched)
-                {
-                    DWORD OldProtect;
-                    VirtualProtect(&RDataStart[j], TargetLen, PAGE_READWRITE, &OldProtect);
-                    memcpy(&RDataStart[j], Target, TargetLen);
-                }
+                DWORD OldProtect;
+                VirtualProtect(&RDataStart[j], TargetLen, PAGE_READWRITE, &OldProtect);
+                memcpy(&RDataStart[j], Target, TargetLen);
             }
         }
     }
