@@ -1,0 +1,61 @@
+D
+
+398E1C
+Are you sure you wish to quit the game?
+你确定要退出游戏吗？
+
+39C4E0
+Wheel up
+上滑
+
+39C4EC
+Wheel down
+下滑
+
+39C528
+Snap pointer
+指针吸附
+
+39C538
+Gesture
+手势
+
+39C4FD
+Off
+关
+
+39C3DC
+Hide Window
+隐藏
+
+39C3C8
+Backlog
+历史
+
+39C3B0
+Rewind Once
+上一句
+
+39C38C
+Disable
+禁用
+
+39C394
+Forward Once
+下一句
+
+39C51C
+All cursors
+所有
+
+39C508
+Dialog and Choices
+对话框和选项
+
+/*
+* 映射文件的输入格式（所有数字均为16进制的形式）
+* 首先是一个数字，代表词条数目
+* 每个词条占三行，第一行有一个数字，为词条所在**PE文件偏移**
+* 第二行为英文原文，用来计算最大字节长度
+* 第三行为翻译中文，要确保中文的utf-8字节数小于等于英文的utf-8字节数，否则本词条将不进行处理
+*/

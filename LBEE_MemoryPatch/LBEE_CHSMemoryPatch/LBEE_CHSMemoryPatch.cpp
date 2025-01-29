@@ -2,9 +2,12 @@
 #undef _UNICODE
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 #include <Windows.h>
 #include <TlHelp32.h>
 #include <psapi.h>
+
 using namespace std;
 
 LPCSTR patchName = "LBEE_CHSMemoryPatch.exe";
@@ -15,9 +18,10 @@ LPCSTR patchCommand = "--chspatch";
 LPCSTR patchCommandSetup = "SETUP --chspatch";		// SETUP参数是原游戏自带的，用来启动清空存档功能的
 LPCSTR patchEvent = "patchEvent";
 LPCSTR gameNameSetupCommand = "LITBUS_WIN32.exe SETUP";
-char buff[1000];
-BYTE writeBuffer[1000];
-const char* MemoryMapper = "input.txt";				// 存储文本的文件名
+char buff[10000];
+BYTE writeBuffer[10000];
+const char* MemoryMapper = "mapper.txt";			// 存储文本的文件名
+LPCSTR checkCommand = "--check";					// 用来检验内存映射文件是否正确
 
 void errorMessageBox(const char* funcName) {
 	const char* pattern = "程序在执行%s时遇到错误，LastError: %d";
@@ -72,49 +76,20 @@ DWORD getImageBase(HANDLE hProcess) {
 	}
 	CloseHandle(hSnapshot);
 	return 0;
+}
 
-	/*int size = 100;
-	HMODULE* hModules = (HMODULE*)malloc(sizeof(HMODULE)*size);
-	if (hModules == NULL) {
-		MessageBoxA(NULL, "malloc申请内存失败！", "提示", MB_ICONERROR);
-		return 0;
-	}
-	DWORD tmp;
-	while (1) {
-		if (!K32EnumProcessModules(hProcess, hModules, sizeof(hModules), &tmp)) {
-			errorMessageBox("K32EnumProcessModules");
-			return 0;
-		}
-		if (tmp <= sizeof(HMODULE) * size) {
-			break;
-		}
-		size += 100;
-		hModules = (HMODULE*)realloc(hModules, sizeof(HMODULE) * size);
-		if (hModules == NULL) {
-			MessageBoxA(NULL, "malloc申请内存失败！", "提示", MB_ICONERROR);
-			return 0;
-		}
-	}
-	int len = tmp / sizeof(HMODULE);
-	for (int i = 0; i < len; i++) {
-		if (!GetModuleFileNameA(hModules[i], buff, sizeof(buff))) {
-			cout << "GetMoudleFileNameA fail: " << GetLastError() << endl;
-			continue;
-		}
-		cout << "ModuleName: " << buff << endl;
-		if (!_stricmp(buff, gameName)) {
-			return (DWORD)hModules[i];
-		}
-	}
-	return 0;*/
+DWORD offsetToRVA(DWORD offset) {
+	// 文件偏移转RVA，仅对.rdata区段有效（文件偏移0x361000——0x3DF000）
+	return 0x362000 + (offset - 0x361000);
 }
 
 void startMemoryPatch(HANDLE hProcess) {
 	/*
-	* 映射文件的输入格式（所有数据均为16进制的形式）
+	* 映射文件的输入格式（所有数字均为16进制的形式）
 	* 首先是一个数字，代表词条数目
-	* 每个词条占两行，第一行有两个数字，分别是词条所在内存的RVA（相对虚拟地址）和要写入字节的数量
-	* 第二行为要写入的字节数据
+	* 每个词条占三行，第一行有一个数字，为词条所在**文件偏移**
+	* 第二行为英文原文，用来计算最大字节长度
+	* 第三行为翻译中文，要确保中文的utf-8字节数小于等于英文的utf-8字节数，否则本词条将不进行处理
 	*/
 
 	DWORD imageBase = getImageBase(hProcess);
@@ -132,17 +107,56 @@ void startMemoryPatch(HANDLE hProcess) {
 	int t;
 	cin >> std::hex >> t;
 	while (t--) {
-		int rva;
-		cin >> std::hex >> rva;
-		int len;
-		cin >> std::hex >> len;
-		for (int i = 0; i < len; i++) {
-			int val;
-			cin >> std::hex >> val;
-			writeBuffer[i] = val;
+		int offset;
+		cin >> std::hex >> offset;
+		string eng, chs;
+		cin.ignore();
+		getline(cin, eng);
+		getline(cin, chs);
+		if (chs.length() > eng.length()) {
+			cout << "offset=" << hex << offset << ": Chinese bytes are more than English" << endl;
+			continue;
+		}
+		DWORD rva = offsetToRVA(offset);
+		int len = eng.length();
+		for (int i = 0; i < chs.length(); i++) {
+			writeBuffer[i] = static_cast<unsigned char>(chs[i]);
+		}
+		for (int i = chs.length(); i < len; i++) {
+			writeBuffer[i] = 0;
 		}
 		std::cout << "RVA=" << rva << ": patch" << (writeCHSMemory(imageBase, hProcess, rva, writeBuffer, len) ? "success" : "fail") << std::endl;
 	}
+}
+
+int startChecker() {
+	// 注意文件以UTF-8的编码保存
+	ifstream cin(MemoryMapper);
+	if (!cin.is_open()) {
+		MessageBoxA(NULL, "内存映射文件不存在！", "提示", MB_ICONWARNING);
+		return 3;
+	}
+	int t;
+	cin >> std::hex >> t;
+	while (t--) {
+		int offset;
+		cin >> std::hex >> offset;
+		string eng, chs;
+		cin.ignore();
+		getline(cin, eng);
+		getline(cin, chs);
+		if (chs.length() > eng.length()) {
+			cout << "offet=" << hex << offset << ": Chinese bytes are more than English" << endl;
+		}
+		/*cout << "rva=" << hex << rva << ": ";
+		for (int i = 0; i < chs.length(); i++) {
+			cout << hex << static_cast<int>(static_cast<unsigned char>(chs[i])) << ' ';
+		}
+		cout << endl;*/
+	}
+	cout << "all checked!" << endl;
+	getchar();
+	return 0;
 }
 
 int startProcess1(int argc, char* argv[]) {
@@ -234,7 +248,10 @@ int main(int argc, char* argv[]) {
 		cout << "argv[" << i << "]: " << argv[i] << endl;
 	}
 
-	if (argc == 0 || strcmp(argv[argc - 1], patchCommand)) {
+	if (argc>0 && !strcmp(argv[argc-1], checkCommand)) {
+		return startChecker();
+	}
+	else if (argc == 0 || strcmp(argv[argc - 1], patchCommand)) {
 		return startProcess1(argc, argv);
 	}
 	else {
