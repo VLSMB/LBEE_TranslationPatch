@@ -59,6 +59,16 @@
         [DllImport("user32.dll")]
         public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
 
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        private static extern IntPtr BeginUpdateResource(string pFileName, bool bDeleteExistingResources);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        private static extern bool UpdateResource(IntPtr hUpdate, IntPtr lpType, IntPtr lpName, ushort wLanguage, byte[] lpData, uint cbData);
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        private static extern bool EndUpdateResource(IntPtr hUpdate, bool fDiscard);
+
+
         private static string Select_LBEEEXE()
         {
             var CacheWD = Directory.GetCurrentDirectory();
@@ -599,99 +609,26 @@
                 Process.Start("Files\\lucksystem.exe", $"pak replace -s \"{TemplatePak}\" -i \"{PendingReplacePath}\" -o \"{SourcePak}\"").WaitForExit();
             }
 
-            //针对EXE的Patch，这里逐字节扫描所有的数据，直到找到文字的位置，然后替换
-            //LBEE的EXE有SteamDRM保护，任何修改都会导致游戏无法启动
-            //但是万一呢？先把代码放在这里，或许有朝一日会有办法的。
-            /*var ProgramTextPath = Path.Combine(TextMappingPath, "$PROGRAM.json");
-            if (File.Exists(ProgramTextPath))
+            // 将$Program.json塞进DxHook.base中
+            string DXHookPath = Path.Combine(TMPPath, "dxgi.dll");
+            string DxHookSourcePath = "Files\\DxHook.base";
+            if(File.Exists(DXHookPath))
             {
-                var LBEE_Vanilla_EXE = Path.Combine(LBEEGamePath, "LITBUS_WIN32.vanilla.bak");
-                if(!File.Exists(LBEE_Vanilla_EXE))
-                {
-                    File.Copy(LBEE_EXE, LBEE_Vanilla_EXE);
-                }
-                var LBEEBinaries = File.ReadAllBytes(LBEE_Vanilla_EXE);
-                var ProgramTextJson = JArray.Parse(File.ReadAllText(ProgramTextPath));
-                foreach(var ProgramTextItem in ProgramTextJson)
-                {
-                    var Source = ProgramTextItem.Value<JObject>()?["Source"]?.Value<string>() ?? "";
-                    var Target = ProgramTextItem.Value<JObject>()?["Target"]?.Value<string>() ?? "";
-                    if(Source == "" || Target == "" || Source==Target)
-                    {
-                        continue;
-                    }
-                    // 逐字节扫描UTF16
-                    var SourceU16 = Encoding.Unicode.GetBytes(Source);
-                    var TargetU16 = Encoding.Unicode.GetBytes(Target);
-                    if(SourceU16.Count()< TargetU16.Count())
-                    {
-                        Console.WriteLine("Program Text Error: Target Text is longer than Source Text");
-                    }
-                    else
-                    {
-                        for (int SearchOffset = 0; SearchOffset <= 1; SearchOffset++)
-                        {
-                            var SearchEnd = LBEEBinaries.Length - (SourceU16.Length + 2 + SearchOffset);
-                            for (var i = SearchOffset; i < SearchEnd; i += 2)
-                            {
-                                var Matched = true;
-                                for (var j = 0; j < SourceU16.Length; j++)
-                                {
-                                    if (LBEEBinaries[i + j] != SourceU16[j])
-                                    {
-                                        Matched = false;
-                                        break;
-                                    }
-                                }
-                                if (Matched && LBEEBinaries[i + SourceU16.Length] == 0 && LBEEBinaries[i + SourceU16.Length + 1] == 0)
-                                {
-                                    Array.Copy(TargetU16, 0, LBEEBinaries, i, TargetU16.Length);
-                                    LBEEBinaries[i + TargetU16.Length] = 0;
-                                    LBEEBinaries[i + TargetU16.Length + 1] = 0;
-                                }
-                            }
-                        }
-                    }
-                    // 逐字节扫描UTF8
-                    var SourceU8 = Encoding.UTF8.GetBytes(Source);
-                    var TargetU8 = Encoding.UTF8.GetBytes(Target);
-                    if (SourceU8.Count() < TargetU8.Count())
-                    {
-                        Console.WriteLine("Program Text Error: Target Text is longer than Source Text");
-                    }
-                    else
-                    {
-                        var SearchEnd = LBEEBinaries.Length - (SourceU16.Length + 1);
-                        for (var i = 0; i < SearchEnd; i++)
-                        {
-                            var Matched = true;
-                            for (var j = 0; j < SourceU8.Length; j++)
-                            {
-                                if (LBEEBinaries[i + j] != SourceU8[j])
-                                {
-                                    Matched = false;
-                                    break;
-                                }
-                            }
-                            if (Matched && LBEEBinaries[i + SourceU8.Length] == 0)
-                            {
-                                Array.Copy(TargetU8, 0, LBEEBinaries, i, TargetU8.Length);
-                                LBEEBinaries[i + TargetU8.Length] = 0;
-                            }
-                        }
-                    }
-                }
-                if(File.Exists(LBEE_EXE))
-                {
-                    File.Delete(LBEE_EXE);
-                }
-                File.WriteAllBytes(LBEE_EXE, LBEEBinaries);
-            }*/
+                File.Delete(DXHookPath);
+            }
+            File.Copy(DxHookSourcePath, DXHookPath);
+            IntPtr hUpdate = BeginUpdateResource(DXHookPath, false);
+            IntPtr lpType = Marshal.StringToHGlobalAuto("JSON");
+            byte[] PROGRAMBytes = File.ReadAllBytes(Path.Combine(TextMappingPath, "$PROGRAM.json"));
+            UpdateResource(hUpdate, lpType, 101, 0, PROGRAMBytes, (uint)PROGRAMBytes.Length);
+            Marshal.FreeHGlobal(lpType);
+            EndUpdateResource(hUpdate, false);
+            File.Move(DXHookPath, Path.Combine(LBEEGamePath, "dxgi.dll"), true);
 #if RELEASE
             Directory.Delete(TemplateDir, true);
 #endif
             {
-                string Notice = "汉化完成。\n如果需要恢复原版，请使用Steam验证游戏文件完整性，会自动还原被修改的文件。";
+                string Notice = "汉化完成。\n如果需要恢复原版，请删除游戏文件夹下的dxgi.dll，并使用Steam验证游戏文件完整性，会自动还原被修改的文件。";
                 Console.WriteLine(Notice);
                 MessageBox(IntPtr.Zero, Notice, "LBEE_TranslationPatch", 0);
             }
