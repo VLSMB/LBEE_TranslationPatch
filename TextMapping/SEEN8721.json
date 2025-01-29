@@ -2,27 +2,27 @@
   "TASK": [
     {
       "JP1": "理樹は『%s%s』を手に入れた！",
-      "EN1": "Riki received [%s%s]!",
+      "EN1": "理树获得了[%s%s]！",
       "Translation1": "理树获得了[%s%s]！"
     },
     {
       "JP1": "は",
       "JP2": "を捨てた",
-      "EN1": " discarded ",
+      "EN1": "丢弃了",
       "Translation1": "丢弃了",
       "EN2": ".",
       "Translation2": "."
     },
     {
       "JP1": "『%s%s』の鍛錬効果！$d理樹の腕力と体力が$V(#20004)上がった！",
-      "EN1": "[%s%s]: Arm & Body strength +$v(#20004) point(s)!",
+      "EN1": "[%s%s]的锻炼效果！$d腕力和体力上升了$v(#20004)点！",
       "Translation1": "[%s%s]的锻炼效果！$d腕力和体力上升了$v(#20004)点！"
     }
   ],
   "MESSAGE": [
     {
       "JP": "持ち物がいっぱいだ。どれを捨てよう？",
-      "EN": "Too many accessories. Get rid of something?",
+      "EN": "拥有的道具太多了，我应该丢弃哪一个？",
       "Translation": "拥有的道具太多了，我应该丢弃哪一个？"
     }
   ]

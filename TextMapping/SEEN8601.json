@@ -23,7 +23,10 @@
     {
       "JP": "ミス！　",
       "EN": "Missed! ",
-      "Translation": "被闪避了！ "
+      "Translation": "被闪避了！ ",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " receives no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "に$V(#22092)$(7,0)",

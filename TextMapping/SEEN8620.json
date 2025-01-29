@@ -2,77 +2,77 @@
   "BATTLE": [
     {
       "JP": "の腕力が$V(#20014)ＵＰした！",
-      "EN": "'s arm strength increased by $v(#20014) points!",
+      "EN": "的腕力上升了$v(#20014)点！",
       "Translation": "的腕力上升了$v(#20014)点！"
     },
     {
       "JP": "の腕力が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s arm strength decreased by $v(#20014) points!",
+      "EN": "的腕力下降了$v(#20014)点！",
       "Translation": "的腕力下降了$v(#20014)点！"
     },
     {
       "JP": "の体力が$V(#20014)ＵＰした！",
-      "EN": "'s body strength increased by $v(#20014) points!",
+      "EN": "的体力上升了$v(#20014)点！",
       "Translation": "的体力上升了$v(#20014)点！"
     },
     {
       "JP": "の体力が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s body strength decreased by $v(#20014) points!",
+      "EN": "的体力下降了$v(#20014)点！",
       "Translation": "的体力下降了$v(#20014)点！"
     },
     {
       "JP": "の敏捷性が$V(#20014)ＵＰした！",
-      "EN": "'s agility increased by $v(#20014) points!",
+      "EN": "的敏捷上升了$v(#20014)点！",
       "Translation": "的敏捷上升了$v(#20014)点！"
     },
     {
       "JP": "の敏捷性が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s agility decreased by $v(#20014) points!",
+      "EN": "的敏捷下降了$v(#20014)点！",
       "Translation": "的敏捷下降了$v(#20014)点！"
     },
     {
       "JP": "の反射神経が$V(#20014)ＵＰした！",
-      "EN": "'s reflex increased by $v(#20014) points!",
+      "EN": "的反应速度上升了$v(#20014)点！",
       "Translation": "的反应速度上升了$v(#20014)点！"
     },
     {
       "JP": "の反射神経が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s reflex decreased by $v(#20014) points!",
+      "EN": "的反应速度下降了$v(#20014)点！",
       "Translation": "的反应速度下降了$v(#20014)点！"
     },
     {
       "JP": "の集中力が$V(#20014)ＵＰした！",
-      "EN": "'s concentration increased by $v(#20014) points!",
+      "EN": "的集中力上升了$v(#20014)点！",
       "Translation": "的集中力上升了$v(#20014)点！"
     },
     {
       "JP": "の集中力が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s concentration decreased by $v(#20014) points!",
+      "EN": "的集中力下降了$v(#20014)点！",
       "Translation": "的集中力下降了$v(#20014)点！"
     },
     {
       "JP": "の判断力が$V(#20014)ＵＰした！",
-      "EN": "'s judgement increased by $v(#20014) points!",
+      "EN": "的判断力上升了$v(#20014)点！",
       "Translation": "的判断力上升了$v(#20014)点！"
     },
     {
       "JP": "の判断力が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s judgement decreased by $v(#20014) points!",
+      "EN": "的判断力下降了$v(#20014)点！",
       "Translation": "的判断力下降了$v(#20014)点！"
     },
     {
       "JP": "の運が$V(#20014)ＵＰした！",
-      "EN": "'s luck increased by $v(#20014) points!",
+      "EN": "的运气上升了$v(#20014)点！",
       "Translation": "的运气上升了$v(#20014)点！"
     },
     {
       "JP": "の運が$V(#20014)ＤＯＷＮした！",
-      "EN": "'s luck decreased by $v(#20014) points!",
+      "EN": "的运气下降了$v(#20014)点！",
       "Translation": "的运气下降了$v(#20014)点！"
     },
     {
       "JP": "のＨＰが回復した！",
-      "EN": "'s HP restored!",
+      "EN": "的HP回复了！",
       "Translation": "的HP回复了！"
     }
   ]

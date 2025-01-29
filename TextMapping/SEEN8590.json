@@ -148,12 +148,18 @@
     {
       "JP": "はあぶらとり紙を",
       "EN": " applies the cosmetic paper to ",
-      "Translation": "将吸油纸涂抹在"
+      "Translation": "将吸油纸涂抹在",
+      "JP2": "の顔に押しつけた！",
+      "EN2": "'s face!",
+      "Translation2": "的脸上！"
     },
     {
       "JP": "は高級あぶらとり紙を",
       "EN": " applies the expensive cosmetic paper to ",
-      "Translation": "将高级吸油纸涂抹在"
+      "Translation": "将高级吸油纸涂抹在",
+      "JP2": "の顔に押しつけた！",
+      "EN2": "'s face!",
+      "Translation2": "的脸上！"
     },
     {
       "JP": "はソフビ製のヒーローを手で戦わせた！",
@@ -228,32 +234,50 @@
     {
       "JP": "は毛布を",
       "EN": " attempts to cover ",
-      "Translation": "试图用毛毯盖住"
+      "Translation": "试图用毛毯盖住",
+      "JP2": "にかぶせようとした！",
+      "EN2": " with a blanket!",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " is watching ",
-      "Translation": "正在观看"
+      "Translation": "看着",
+      "JP2": "のもがいている様子を眺めている！",
+      "EN2": " struggle! ",
+      "Translation2": "挣扎的样子！"
     },
     {
       "JP": "は体育館のネットを",
-      "EN": " attempts to cover ",
-      "Translation": "试图用体育馆的网盖住"
+      "EN": "试图用体育馆的网盖住",
+      "Translation": "试图用体育馆的网盖住",
+      "JP2": "にかぶせようとした！",
+      "EN2": " with a gym net!",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " is watching ",
-      "Translation": "正在观看"
+      "Translation": "正在观看",
+      "JP2": "のもがいている様子を眺めている！",
+      "EN2": " struggle! ",
+      "Translation2": "挣扎的样子！ "
     },
     {
       "JP": "は虎模様のペルシャじゅうたんを",
       "EN": " attempts to cover ",
-      "Translation": "试图用虎纹波斯地毯盖住"
+      "Translation": "试图用虎纹波斯地毯盖住",
+      "JP2": "にかぶせようとした！",
+      "EN2": " with a Persian tiger carpet! ",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " is watching ",
-      "Translation": "正在观看"
+      "Translation": "看着",
+      "JP2": "のもがいている様子を眺めている！",
+      "EN2": " struggle! ",
+      "Translation2": "挣扎的样子！"
     },
     {
       "JP": "は指でっぽうで輪ゴムを飛ばした！",
@@ -333,27 +357,42 @@
     {
       "JP": "はコロコロを転がしながら",
       "EN": ", while pushing a paint roller, sweeps ",
-      "Translation": "推着滚筒刷，扫地"
+      "Translation": "推着滚筒刷，扫",
+      "JP2": "の足下を払いのける！",
+      "EN2": "'s legs! ",
+      "Translation2": "的腿！"
     },
     {
       "JP": "はほうきで掃きながら",
       "EN": " sweeps ",
-      "Translation": "用扫帚扫地"
+      "Translation": "用扫帚扫",
+      "JP2": "の足下を払いのける！",
+      "EN2": "'s legs with a broom!",
+      "Translation2": "的腿！"
     },
     {
       "JP": "はモップを掛けながら",
       "EN": " sweeps ",
-      "Translation": "用拖把拖地"
+      "Translation": "用拖把扫",
+      "JP2": "の足下を払いのける！",
+      "EN2": "'s legs with a mop!",
+      "Translation2": "的腿！"
     },
     {
       "JP": "はトイレブラシでゴシゴシ磨きながら",
       "EN": ", while scrubbing with a toilet brush, makes a sweep at ",
-      "Translation": "用马桶刷刷洗"
+      "Translation": "用马桶刷刷洗",
+      "JP2": "の足下を払いのける！",
+      "EN2": "'s legs! ",
+      "Translation2": "的腿！"
     },
     {
       "JP": "はぞうきん掛けで",
       "EN": " uses a dirty rag to ram into ",
-      "Translation": "用抹布擦拭"
+      "Translation": "用抹布擦拭",
+      "JP2": "の足下に突っ込んでいく！",
+      "EN2": "'s legs!",
+      "Translation2": "的腿！"
     },
     {
       "JP": "はねずみ花火を地面に投げ放った！",
@@ -543,47 +582,74 @@
     {
       "JP": "は歯ブラシで",
       "EN": " vigorously brushes ",
-      "Translation": "用牙刷猛刷"
+      "Translation": "用牙刷猛刷",
+      "JP2": "の歯を勢いよく磨いた！",
+      "EN2": "'s teeth with a toothbrush! ",
+      "Translation2": "的牙！"
     },
     {
       "JP": "は電動歯ブラシで",
       "EN": " vigorously brushes ",
-      "Translation": "用电动牙刷猛刷"
+      "Translation": "用电动牙刷猛刷",
+      "JP2": "の歯をフルパワーで磨いた！",
+      "EN2": "'s teeth with an electric toothbrush! ",
+      "Translation2": "的牙！"
     },
     {
       "JP": "は",
       "EN": " pinches ",
-      "Translation": "捏"
+      "Translation": "用戴着厨房手套的手掐",
+      "JP2": "に向かってキッチンミトンをはめた手をのばす！",
+      "EN2": " with their kitchen mitt covered hand!",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " pinches ",
-      "Translation": "捏"
+      "Translation": "用筷子戳",
+      "JP2": "に向かって箸をのばす！",
+      "EN2": " with chopsticks!",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " pinches ",
-      "Translation": "捏"
+      "Translation": "用夹子夹",
+      "JP2": "に向かってトングをのばす！",
+      "EN2": " with tongs!",
+      "Translation2": "！"
     },
     {
       "JP": "は",
       "EN": " pinches ",
-      "Translation": "捏"
+      "Translation": "用钳子夹",
+      "JP2": "に向かってペンチをのばす！",
+      "EN2": " with pliers!",
+      "Translation2": "！"
     },
     {
       "JP": "は洗濯バサミを",
       "EN": " attaches a laundry peg to ",
-      "Translation": "用晾衣夹夹住"
+      "Translation": "用晾衣夹夹住",
+      "JP2": "の顔に挟んだ！",
+      "EN2": "'s face!",
+      "Translation2": "的脸！"
     },
     {
       "JP": "はアルミピンチを",
       "EN": " attaches an aluminium peg to ",
-      "Translation": "用铝夹夹住"
+      "Translation": "用铝夹夹住",
+      "JP2": "の顔に挟んだ！",
+      "EN2": "'s face!",
+      "Translation2": "的脸！"
     },
     {
       "JP": "はクリップ式小型扇風機を",
       "EN": " attaches a small clip-on fan to ",
-      "Translation": "用小型夹扇夹住"
+      "Translation": "用小型夹扇夹住",
+      "JP2": "の顔に挟んだ！",
+      "EN2": "'s face!",
+      "Translation2": "的脸！"
     },
     {
       "JP": "はおもちゃのナイフで刺した！",
@@ -613,7 +679,10 @@
     {
       "JP": "は黒板消しの粉を",
       "EN": " sprinkles chalk powder from the blackboard eraser on ",
-      "Translation": "用黑板擦的粉末撒在"
+      "Translation": "用黑板擦的粉末撒在",
+      "JP2": "の顔面で払った！",
+      "EN2": "'s face! ",
+      "Translation2": "的脸上！"
     },
     {
       "JP": "は寝袋に入って寝返りを打った！",
@@ -623,7 +692,10 @@
     {
       "JP": "はかなぶんを",
       "EN": " points the stag beetle at ",
-      "Translation": "指着金龟子"
+      "Translation": "指着金龟子，并让它朝着",
+      "JP2": "に向かって飛ばした！",
+      "EN2": " and lets it fly! ",
+      "Translation2": "飞！"
     },
     {
       "JP": "は耳を大きくしようとした！",
@@ -638,17 +710,29 @@
     {
       "JP": "は",
       "EN": " pulls a card that ",
-      "Translation": "抽出了一张卡片"
+      "Translation": "从密封袋里抽出了",
+      "JP2": "が引いた一枚のカードをすでに封のしてある封筒から取り出して当てて見せようとした！",
+      "EN2": " picked, out of a sealed envelope!",
+      "Translation2": "选中的一张卡片！"
     },
     {
       "JP": "は",
       "EN": " writes ",
-      "Translation": "写下"
+      "Translation": "在一张一千日元上写下",
+      "JP2": "の名前を書いた千円札を燃やして、",
+      "EN2": "'s name on a 1000 yen bill, burns it, and then produces it from ",
+      "Translation2": "的名字，烧掉，然后又从",
+      "JP3": "のポケットから取り出してみせようとした！",
+      "EN3": "'s pocket! ",
+      "Translation3": "的口袋里把它完好的取出来！"
     },
     {
       "JP": "はガラスのテーブルの上に置いた５００円玉をすり抜けさせて",
       "EN": " makes a 500 yen coin come out of a glass and drops it on ",
-      "Translation": "让500日元硬币穿过玻璃掉在"
+      "Translation": "让500日元硬币穿过玻璃掉在",
+      "JP2": "の手に落とそうとした！",
+      "EN2": "'s palm! ",
+      "Translation2": "的手里！"
     },
     {
       "JP": "弓曳童子は弓に矢をつがえて射った！",
@@ -668,22 +752,34 @@
     {
       "JP": "はデジタルカメラで",
       "EN": " uses a digital camera to take a bad photo of ",
-      "Translation": "用数码相机拍了张糟糕的照片"
+      "Translation": "用数码相机对着",
+      "JP2": "のイケていない顔を撮った！",
+      "EN2": "'s face!",
+      "Translation2": "的脸拍了张糟糕的照片！"
     },
     {
       "JP": "はデジタルカメラで偶然",
       "EN": " uses a digital camera and accidentally exposes ",
-      "Translation": "用数码相机不小心曝光了"
+      "Translation": "用数码相机不小心曝光了",
+      "JP2": "の秘密を暴いてしまった！",
+      "EN2": "'s secret!",
+      "Translation2": "的秘密！"
     },
     {
       "JP": "はデジタルカメラで偶然",
       "EN": " uses a digital camera and accidentally takes a panty shot of ",
-      "Translation": "用数码相机不小心拍到了内裤照"
+      "Translation": "用数码相机不小心拍到了",
+      "JP2": "のパンチラを撮ってしまった！",
+      "EN2": "!",
+      "Translation2": "的内裤照！"
     },
     {
       "JP": "は爪切りで",
       "EN": " clips ",
-      "Translation": "用指甲刀剪"
+      "Translation": "用指甲刀剪",
+      "JP2": "の爪を切った！",
+      "EN2": "'s nail with a nail clipper!",
+      "Translation2": "的指甲！"
     },
     {
       "JP": "はトイレットペーパーを空中に舞わせた！",
@@ -753,7 +849,10 @@
     {
       "JP": "はノートに",
       "EN": " writes a fairy tale about ",
-      "Translation": "在笔记本上写童话故事"
+      "Translation": "在笔记本上写关于",
+      "JP2": "を題材にした童話を書いた！",
+      "EN2": " in the notebook! ",
+      "Translation2": "的童话故事！"
     },
     {
       "JP": "はレプリカノリムネで斬りつけた！",
@@ -778,7 +877,10 @@
     {
       "JP": "ストレルカが",
       "EN": "Strelka leaps on ",
-      "Translation": "斯特勒鲁卡跳上"
+      "Translation": "斯特勒鲁卡跳上了",
+      "JP2": "に襲い掛かった！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "はヴェルカと戯れている",
@@ -788,7 +890,10 @@
     {
       "JP": "ヴェルカが",
       "EN": "Belka leaps on ",
-      "Translation": "威尔卡跳上"
+      "Translation": "威尔卡跳上了",
+      "JP2": "に襲い掛かった！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "はヴェルカ＆ストレルカと戯れている",
@@ -798,7 +903,10 @@
     {
       "JP": "ヴェルカ＆ストレルカが",
       "EN": "Belka and Strelka leap on ",
-      "Translation": "威尔卡和斯特勒鲁卡跳上"
+      "Translation": "威尔卡和斯特勒鲁卡跳上了",
+      "JP2": "に襲い掛かった！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "はビーだまを投げつけた！",
@@ -813,12 +921,18 @@
     {
       "JP": "は日傘で",
       "EN": " seriously hits ",
-      "Translation": "用阳伞狠狠地打了"
+      "Translation": "用阳伞狠狠地打了",
+      "JP2": "を本気で叩いた！",
+      "EN2": " with a parasol! ",
+      "Translation2": "！"
     },
     {
       "JP": "は日傘で",
       "EN": " hits ",
-      "Translation": "用阳伞打了"
+      "Translation": "用阳伞打了",
+      "JP2": "を叩いた！",
+      "EN2": " with a parasol! ",
+      "Translation2": "！"
     },
     {
       "JP": "は薄っぺらい本を読み始めた！",
@@ -833,12 +947,18 @@
     {
       "JP": "はウィルスを使って",
       "EN": " uses virus and attempts to invade ",
-      "Translation": "使用病毒试图入侵"
+      "Translation": "使用病毒试图入侵",
+      "JP2": "への侵入を試みた！",
+      "EN2": "!",
+      "Translation2": "!"
     },
     {
       "JP": "はなんだかよくわからないパワーを",
       "EN": " keeps on transmitting Somewhat Incomprehensible Power to ",
-      "Translation": "不断传递某种难以理解的力量给"
+      "Translation": "不断传递某种难以理解的力量给",
+      "JP2": "に送り続けている！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "は電磁バリアを使ってなんだかよくわからないパワーを周囲に展開させた！",
@@ -1233,17 +1353,26 @@
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "にかわされてしまった！",
+      "EN2": " avoids it! ",
+      "Translation2": "躲开了！"
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "にかわされてしまった！",
+      "EN2": " avoids it! ",
+      "Translation2": "躲开了！"
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "にかわされてしまった！",
+      "EN2": " avoids it! ",
+      "Translation2": "躲开了！"
     },
     {
       "JP": "は泡で足が滑った！",
@@ -1268,7 +1397,10 @@
     {
       "JP": "足払い失敗！　",
       "EN": "Unsuccessful leg sweep! ",
-      "Translation": "扫腿失败！"
+      "Translation": "扫腿失败！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " received no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "は転んでしまった！",
@@ -1278,7 +1410,10 @@
     {
       "JP": "足払い失敗！　",
       "EN": "Unsuccessful leg sweep! ",
-      "Translation": "扫腿失败！"
+      "Translation": "扫腿失败！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " received no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "は転んでしまった！",
@@ -1288,7 +1423,10 @@
     {
       "JP": "足払い失敗！　",
       "EN": "Unsuccessful leg sweep! ",
-      "Translation": "扫腿失败！"
+      "Translation": "扫腿失败！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " received no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "は転んでしまった！",
@@ -1298,7 +1436,10 @@
     {
       "JP": "足払い失敗！　",
       "EN": "Unsuccessful leg sweep! ",
-      "Translation": "扫腿失败！"
+      "Translation": "扫腿失败！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " received no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "は転んでしまった！",
@@ -1308,7 +1449,10 @@
     {
       "JP": "足払い失敗！　",
       "EN": "Unsuccessful leg sweep! ",
-      "Translation": "扫腿失败！"
+      "Translation": "扫腿失败！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " received no damage! ",
+      "Translation2": "没有受到伤害！"
     },
     {
       "JP": "の足下でねずみ花火が炸裂！",
@@ -1508,12 +1652,18 @@
     {
       "JP": "ものすごい回転をしながら飛び出し、",
       "EN": "It flies out with a tremendous rotation and hits ",
-      "Translation": "它高速旋转着飞了出来，击中了"
+      "Translation": "它高速旋转着飞了出来，击中了",
+      "JP2": "のみぞおちに深々とめりこんでいく！",
+      "EN2": " in the solar plexus!",
+      "Translation2": "的腹部！"
     },
     {
       "JP": "ぼむっ！とミサイルのように飛び出し、",
       "EN": "Boom! It flies out like a missile, and hits ",
-      "Translation": "砰！它像导弹一样飞了出来，击中了"
+      "Translation": "砰！它像导弹一样飞了出来，击中了",
+      "JP2": "の眉間を襲う！",
+      "EN2": " between the eyes! ",
+      "Translation2": "的眉间！"
     },
     {
       "JP": "不発！　あおひげは飛び出さない！",
@@ -1528,27 +1678,42 @@
     {
       "JP": "手品成功！　",
       "EN": "Trick succeeded! ",
-      "Translation": "魔术成功了！"
+      "Translation": "魔术成功了！",
+      "JP2": "はショックを受けた！",
+      "EN2": " is shocked! ",
+      "Translation2": "被震惊到了！"
     },
     {
       "JP": "手品失敗！　",
       "EN": "Trick failed! ",
-      "Translation": "魔术失败了！"
+      "Translation": "魔术失败了！",
+      "JP2": "にダメージを与えられない！",
+      "EN2": " didn't receive damage! ",
+      "Translation2": "没有收到伤害！"
     },
     {
       "JP": "７色の光が",
       "EN": "Light shines on ",
-      "Translation": "七色的光芒照在"
+      "Translation": "七色的光芒照射",
+      "JP2": "を射る！",
+      "EN2": " in seven colors! ",
+      "Translation2": "！"
     },
     {
       "JP": "が飛び出たように見えたが、",
       "EN": " pops into sight, but ",
-      "Translation": "突然出现，但"
+      "Translation": "突然出现，但",
+      "JP2": "は平静を装った！",
+      "EN2": " remains calm!",
+      "Translation2": "装出了平静的样子！"
     },
     {
       "JP": "が飛び出たように見えて、",
       "EN": " pops into the field of vision, ",
-      "Translation": "突然出现在视野中，"
+      "Translation": "突然出现在视野中，",
+      "JP2": "はたじろいでしまった！",
+      "EN2": " is frightened!",
+      "Translation2": "被吓到了！"
     },
     {
       "JP": "はまったく気にならなかった",
@@ -1698,7 +1863,10 @@
     {
       "JP": "とても可愛らしく書かれすぎて、",
       "EN": "It's too cute, ",
-      "Translation": "写得太可爱了，"
+      "Translation": "写得太可爱了，",
+      "JP2": "は恥ずかしくなった！",
+      "EN2": " is embarrassed! ",
+      "Translation2": "很不好意思！"
     },
     {
       "JP": "弾がそれた！",
@@ -1718,17 +1886,26 @@
     {
       "JP": "なんだかよくわからないパワーで高速回転したヨーヨーが",
       "EN": "Propelled by the Somewhat Incomprehensible Power, cyber yoyo assaults ",
-      "Translation": "被某种不明力量高速旋转的悠悠球袭击"
+      "Translation": "被某种不明力量高速旋转的悠悠球袭击",
+      "JP2": "を襲う！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "侵入失敗！　",
       "EN": "Unsuccessful invasion! ",
-      "Translation": "入侵失败！"
+      "Translation": "入侵失败！",
+      "JP2": "は平然としている！",
+      "EN2": " remains calm! ",
+      "Translation2": "仍然平静！"
     },
     {
       "JP": "なんだかよくわからないパワーが刃のように",
       "EN": "Like a blade, the Somewhat Incomprehensible Power cuts through ",
-      "Translation": "某种不明力量像刀刃一样切割"
+      "Translation": "某种不明力量像刀刃一样切割",
+      "JP2": "を切り裂く！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "は毛布に絡まって転んだ！",
@@ -1978,7 +2155,10 @@
     {
       "JP": "は",
       "EN": " is touched by the scene of the extraordinary friendship of ",
-      "Translation": "被这非凡的友谊场景感动了。"
+      "Translation": "被",
+      "JP2": "と二匹の仲良しな様子に和んでしまった",
+      "EN2": " and her dogs. ",
+      "Translation2": "和她的狗的非凡友谊场景感动了。"
     },
     {
       "JP": "はビーだまを踏んで転んでしまった！",
@@ -2048,52 +2228,82 @@
     {
       "JP": "深爪によって",
       "EN": "The nail is cut so short, that ",
-      "Translation": "指甲剪得太短了，"
+      "Translation": "指甲剪得太短了，",
+      "JP2": "の親指に激痛が走った！",
+      "EN2": " experiences acute pain in the thumb! ",
+      "Translation2": "的拇指感到了剧烈的疼痛！"
     },
     {
       "JP": "深爪によって",
       "EN": "The nail is cut so short, that ",
-      "Translation": "指甲剪得太短了，"
+      "Translation": "指甲剪得太短了，",
+      "JP2": "の人差し指に激痛が走った！",
+      "EN2": " experiences acute pain in the index finger! ",
+      "Translation2": "的食指感到了剧烈的疼痛！"
     },
     {
       "JP": "深爪によって",
       "EN": "The nail is cut so short, that ",
-      "Translation": "指甲剪得太短了，"
+      "Translation": "指甲剪得太短了，",
+      "JP2": "の中指に激痛が走った！",
+      "EN2": " experiences acute pain in the middle finger! ",
+      "Translation2": "的中指感到了剧烈的疼痛！"
     },
     {
       "JP": "深爪によって",
       "EN": "The nail is cut so short, that ",
-      "Translation": "指甲剪得太短了，"
+      "Translation": "指甲剪得太短了，",
+      "JP2": "の薬指に激痛が走った！",
+      "EN2": " experiences acute pain in the third finger! ",
+      "Translation2": "的无名指感到了剧烈的疼痛！"
     },
     {
       "JP": "深爪によって",
       "EN": "The nail is cut so short, that ",
-      "Translation": "指甲剪得太短了，"
+      "Translation": "指甲剪得太短了，",
+      "JP2": "の小指に激痛が走った！",
+      "EN2": " experiences acute pain in the pinky! ",
+      "Translation2": "的小指感到了剧烈的疼痛！"
     },
     {
       "JP": "なんだかよくわからないパワーが",
       "EN": "Somewhat Incomprehensible Power eats away at ",
-      "Translation": "某种难以理解的力量在侵蚀"
+      "Translation": "某种难以理解的力量在侵蚀",
+      "JP2": "を侵食する！",
+      "EN2": "! ",
+      "Translation2": "! "
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれを消しゴムのケースで華麗に受け止めてみせた！",
+      "EN2": " uses the eraser case to block the attack! ",
+      "Translation2": "使用橡皮擦盒华丽的挡住了攻击！"
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれを折れたごぼうで華麗に受け止めてみせた！",
+      "EN2": " uses the bent burdock to block the attack! ",
+      "Translation2": "使用折断的牛蒡华丽的挡住了攻击！"
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれを折れた太いごぼうで華麗に受け止めてみせた！",
+      "EN2": " uses thick bent burdock to block the attack!",
+      "Translation2": "使用折断的粗牛蒡华丽的挡住了攻击！"
     },
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれを折れたうなぎパイで華麗に受け止めてみせた！",
+      "EN2": " uses the bent eel pie to block the attack!",
+      "Translation2": "使用折断的鳗鱼派华丽的挡住了攻击！"
     },
     {
       "JP": "しかしヒトラーがそれを華麗に受け止めてみせた！",
@@ -2218,7 +2428,10 @@
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれを$(6,0)で華麗に受け止めてみせた！",
+      "EN2": " uses the $(6,1) to block the attack!",
+      "Translation2": "使用$(6,1)华丽的挡住了攻击！"
     },
     {
       "JP": "はすかさず$(6,0)で反撃！",
@@ -2548,7 +2761,10 @@
     {
       "JP": "しかし",
       "EN": "But ",
-      "Translation": "但是"
+      "Translation": "但是",
+      "JP2": "はそれに気を取られて攻撃することができなかった！",
+      "EN2": " is distracted and can't attack!",
+      "Translation2": "分心了，无法攻击！"
     },
     {
       "JP": "沙耶の銃弾が折れた$(6,0)をはじいた！",

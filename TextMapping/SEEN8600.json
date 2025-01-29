@@ -18,12 +18,18 @@
     {
       "JP": "しゅこしゅこ！　",
       "EN": "Shuko shuko! ",
-      "Translation": "Shuko shuko! "
+      "Translation": "咻咻咻！",
+      "JP2": "に$V(#20002)のダメージ！",
+      "EN2": " takes $v(#20002) damage!",
+      "Translation2": "受到了$v(#20002)点伤害！"
     },
     {
       "JP": "勝負あり！　",
       "EN": "The battle is over! ",
-      "Translation": "胜负已分！　"
+      "Translation": "胜负已分！　",
+      "JP2": "の負け！",
+      "EN2": " lost!",
+      "Translation2": "输了！"
     },
     {
       "JP": "は毛布に包まれた！",
@@ -48,7 +54,10 @@
     {
       "JP": "侵入成功！　",
       "EN": "Invasion successful! ",
-      "Translation": "侵入成功！ "
+      "Translation": "侵入成功！ ",
+      "JP2": "はなんだかよくわからないパワーに侵された！",
+      "EN2": " is assaulted by Somewhat Incomprehensible Power! ",
+      "Translation2": "被某种不可思议的力量袭击了！"
     },
     {
       "JP": "に$V(#20002)のダメージ！",
@@ -68,12 +77,18 @@
     {
       "JP": "しゅこしゅこ！　",
       "EN": "Shuko shuko! ",
-      "Translation": "Shuko shuko! "
+      "Translation": "咻咻咻！",
+      "JP2": "に$V(#20002)のダメージ！",
+      "EN2": " takes $v(#20002) damage!",
+      "Translation2": "受到了$v(#20002)点伤害！"
     },
     {
       "JP": "勝負あり！　",
       "EN": "The battle is over! ",
-      "Translation": "胜负已分！ "
+      "Translation": "胜负已分！ ",
+      "JP2": "の負け！",
+      "EN2": " lost!",
+      "Translation2": " 输了！"
     },
     {
       "JP": "は毛布に包まれた！",
@@ -93,12 +108,18 @@
     {
       "JP": "地震攻撃！　",
       "EN": "Earthquake Attack! ",
-      "Translation": "地震攻击！ "
+      "Translation": "地震攻击！ ",
+      "JP2": "に$V(#20002)のダメージ！",
+      "EN2": " takes $v(#20002) damage!",
+      "Translation2": "受到了$v(#20002)点伤害！"
     },
     {
       "JP": "侵入成功！　",
       "EN": "Invasion successful! ",
-      "Translation": "侵入成功！ "
+      "Translation": "侵入成功！ ",
+      "JP2": "はなんだかよくわからないパワーに侵された！",
+      "EN2": " is assaulted by Somewhat Incomprehensible Power! ",
+      "Translation2": "被某种不可思议的力量袭击了！"
     },
     {
       "JP": "は倒れた！",
