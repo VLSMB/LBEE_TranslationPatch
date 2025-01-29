@@ -119,6 +119,10 @@ void DoHook(HINSTANCE hinstDLL)
                 }
             }
         }
+        else
+        {
+			std::cout << "Translation Error: Target is longer than Source:"<< Source << std::endl;
+        }
         for (DWORD j = 0; j < SectionHeader->Misc.VirtualSize; j++)
         {
             bool Matched = true;

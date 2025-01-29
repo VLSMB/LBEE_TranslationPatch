@@ -313,6 +313,10 @@
                     case "--Skip_Description":
                         DescriptionWaitingTime = 0;
                         break;
+#if !RELEASE
+                    case "--DxHookOnly":
+                        goto DxHook;
+#endif
                 }
             }
             Console.WriteLine("《Little Busters! English Edition》汉化程序 ——By JackMyth\n");
@@ -608,7 +612,9 @@
                 Console.WriteLine("");
                 Process.Start("Files\\lucksystem.exe", $"pak replace -s \"{TemplatePak}\" -i \"{PendingReplacePath}\" -o \"{SourcePak}\"").WaitForExit();
             }
-
+#if !RELEASE
+        DxHook:
+#endif
             // 将$Program.json塞进DxHook.base中
             string DXHookPath = Path.Combine(TMPPath, "dxgi.dll");
             string DxHookSourcePath = "Files\\DxHook.base";

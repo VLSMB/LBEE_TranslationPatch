@@ -401,7 +401,11 @@ namespace LBEE_TranslationPatch
             int index = GetCmdHeaderLength(command); // Header+ID
             int BattleID = command[index] + command[index+1] * 256;
             string? msgStr_jp = null;
+            string? msgStr_jp2 = null;
+            string? msgStr_jp3 = null;
             string? msgStr_en = null;
+            string? msgStr_en2 = null;
+            string? msgStr_en3 = null;
             index += 2;
             if(index >= command.Length)
             {
@@ -451,6 +455,7 @@ namespace LBEE_TranslationPatch
                     index += strLength + 2;
                     strLength = GetStrLength(command, index);
                     msgStr_en = Encoding.Unicode.GetString(command[index..(index + strLength)]);
+                    index += strLength + 2;
                 }
                 else
                 {
@@ -460,6 +465,30 @@ namespace LBEE_TranslationPatch
                     index += strLength + 2;
                     strLength = GetStrLength(command, index);
                     msgStr_en = Encoding.Unicode.GetString(command[index..(index + strLength)]);
+                    index += strLength + 2;
+                }
+                // 有时候会有多余的文本，感觉这个指令真的很复杂
+                if (index < command.Length)
+                {
+                    int strLength = GetSingleByteStrLength(command, index);
+                    index += strLength + 1; // Skip ExprStr
+                    strLength = GetStrLength(command, index);
+                    msgStr_jp2 = Encoding.Unicode.GetString(command[index..(index + strLength)]);
+                    index += strLength + 2;
+                    strLength = GetStrLength(command, index);
+                    msgStr_en2 = Encoding.Unicode.GetString(command[index..(index + strLength)]);
+                    index += strLength + 2;
+                }
+                // 居然有Translation3？这个是没限制的吗？
+                if (index < command.Length)
+                {
+                    int strLength = GetSingleByteStrLength(command, index);
+                    index += strLength + 1; // Skip ExprStr
+                    strLength = GetStrLength(command, index);
+                    msgStr_jp3 = Encoding.Unicode.GetString(command[index..(index + strLength)]);
+                    index += strLength + 2;
+                    strLength = GetStrLength(command, index);
+                    msgStr_en3 = Encoding.Unicode.GetString(command[index..(index + strLength)]);
                 }
             }
 
@@ -475,6 +504,24 @@ namespace LBEE_TranslationPatch
             {
                 TrasnlationObj["EN"] = msgStr_en;
                 TrasnlationObj["Translation"] = msgStr_en;
+            }
+            if (msgStr_jp2 != null)
+            {
+                TrasnlationObj["JP2"] = msgStr_jp2;
+            }
+            if (msgStr_en2 != null)
+            {
+                TrasnlationObj["EN2"] = msgStr_en2;
+                TrasnlationObj["Translation2"] = msgStr_en2;
+            }
+            if (msgStr_jp3 != null)
+            {
+                TrasnlationObj["JP3"] = msgStr_jp3;
+            }
+            if (msgStr_en3 != null)
+            {
+                TrasnlationObj["EN3"] = msgStr_en3;
+                TrasnlationObj["Translation3"] = msgStr_en3;
             }
             return TrasnlationObj;
         }
@@ -547,7 +594,9 @@ namespace LBEE_TranslationPatch
                     newCommand = new List<byte>(command[..index]);
                     strLength = GetStrLength(command, index);
                     newCommand.AddRange(Encoding.Unicode.GetBytes(Translation));
-                    index += strLength;
+                    newCommand.Add(0);
+                    newCommand.Add(0);
+                    index += strLength + 2;
                 }
                 else
                 {
@@ -557,7 +606,41 @@ namespace LBEE_TranslationPatch
                     newCommand = new List<byte>(command[..index]);
                     strLength = GetStrLength(command, index);
                     newCommand.AddRange(Encoding.Unicode.GetBytes(Translation));
-                    index += strLength;
+                    newCommand.Add(0);
+                    newCommand.Add(0);
+                    index += strLength + 2;
+                }
+                if (index < command.Length)
+                {
+                    string? Translation2 = inJsonObj["Translation2"]?.Value<string>() != null ? PostProcessText(inJsonObj["Translation2"]?.Value<string>() ?? "") : null;
+                    if (Translation2 != null)
+                    {
+                        int strLength = GetSingleByteStrLength(command, index);
+                        index += strLength + 1; // Skip ExprStr
+                        strLength = GetStrLength(command, index);
+                        index += strLength + 2;
+                        newCommand.AddRange(command[..index]);
+                        strLength = GetStrLength(command, index);
+                        newCommand.AddRange(Encoding.Unicode.GetBytes(Translation2));
+                        newCommand.Add(0);
+                        newCommand.Add(0);
+                        index += strLength + 2;
+                    }
+                }
+                if (index < command.Length)
+                {
+                    string? Translation3 = inJsonObj["Translation3"]?.Value<string>() != null ? PostProcessText(inJsonObj["Translation3"]?.Value<string>() ?? "") : null;
+                    if (Translation3 != null)
+                    {
+                        int strLength = GetSingleByteStrLength(command, index);
+                        index += strLength + 1; // Skip ExprStr
+                        strLength = GetStrLength(command, index);
+                        index += strLength + 2;
+                        newCommand.AddRange(command[..index]);
+                        strLength = GetStrLength(command, index);
+                        newCommand.AddRange(Encoding.Unicode.GetBytes(Translation3));
+                        index += strLength;
+                    }
                 }
                 newCommand.AddRange(command.Skip(index));
                 return newCommand.ToArray();
