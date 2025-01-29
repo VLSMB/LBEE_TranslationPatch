@@ -1,4 +1,4 @@
-D
+4B
 
 398E1C
 Are you sure you wish to quit the game?
@@ -52,10 +52,260 @@ All cursors
 Dialog and Choices
 对话框和选项
 
+39B904
+Skip  
+跳过
+
+39B8F4
+All
+all
+
+39B8F8
+Read Only
+已读
+
+39B90C
+Bottom
+底部
+
+39B914
+Center
+中间
+
+39B930
+Position of
+选项
+
+39B928
+Choices
+位置
+
+39B948
+Continue
+继续
+
+39B954
+Stop on New Page
+下一页停止
+
+39B968
+Voice 
+语音
+
+39B978
+Display date
+显示日期
+
+39B970
+Off
+关
+
+39B974
+On 
+开
+
+39BA50
+【Voice】If you select ***Continue*** voice will continue to flow even if you send a page during voice playback.（It stops if there is voice on the next page）
+【语音】选择“继续”，在翻页的时候不会打断语音。（下一页有语言则会打断）
+
+39BC10
+Language
+语言
+
+39BC44
+Font  
+字体
+
+39BC52
+Transparency
+透明度
+
+39BC60
+Window
+窗口
+
+39BC78
+Only choices
+仅选项
+
+39BC91
+Read Text
+颜色
+
+39BC9C
+Color of
+文本
+
+39BCB0
+Keyword
+Keyword
+
+39BCB8
+Busterpedia
+Busterpedia
+
+39BCC4
+Yellow
+黄
+
+39BCCC
+Red
+红
+
+39BCD0
+Purple
+紫
+
+39BCD8
+Blue
+蓝
+
+39BCE0
+Green
+绿
+
+39BCE8
+Color 
+颜色
+
+39A8F0
+English
+中文
+
+39BE48
+【Wait Time Per Character】In auto mode, this sets the wait time until the next message is displayed based on the number of characters in text.
+【字符等待时间】在自动模式下，根据文本中的字符数设置等待下一条消息显示的时间。
+
+3941E0
+Yes
+是
+
+3941E4
+No 
+否
+
+394848
+Do you wish to load this?
+确定要读取吗？
+
+394880
+The saved data is corrupted and can not be loaded.
+存档已损坏，无法读取。
+
+394904
+A reading error occurred. The file may be corrupted.
+读取时发生错误，存档可能损坏。
+
+3949A8
+Do you wish to save?
+确定保存吗？
+
+3949DC
+Are you sure you wish to overwrite?
+确定要覆盖存档吗？
+
+394820
+Delete
+删除
+
+394834
+Latest
+最新
+
+394A1C
+Are you sure you wish to delete this?
+确定要删除吗？
+
+394A5C
+It can not be deleted.
+删除失败
+
+394A90
+Save is complete.
+已保存
+
+394C18
+Do you wish to jump to the beginning of this chapter?
+要跳转到本节最开始吗？
+
+394C90
+Do you wish to jump to the previous chapter?
+要回到前一个章节吗？
+
+394CF8
+Do you wish to jump to the previous choice?
+要回到前一个选项吗？
+
+394D58
+Do you wish to jump to the next choice or chapter?
+要跳转到下一个选项吗？
+
+394DDC
+Do you wish to jump to the next chapter?
+要跳到下一章节吗？
+
+394E3C
+Do you wish to jump to the next choice?
+要跳到下一个选项吗？
+
+39501C
+Quick save can not be used.
+快速存档不可用。
+
+3951D0
+Quick save is in progress.
+正在快速保存。
+
+39595C
+Do you wish to jump to the next option or chapter?
+要跳转到下一个选项或章节吗？
+
+395A98
+Would you like to return this page to the default settings?
+要恢复最初设置吗？
+
+395B90
+$K1Settings$K0 such as character feed speed are reflected.
+$K1文字设置$K0预览。
+
+395BCC
+Defaults 
+默认值
+
+395BD8
+Sample Voice
+试听
+
+395B38
+$K1Text$K0 preview.
+$K1Text$K0 preview.
+
+393D80
+Would you like to start the game from the selected message?
+要从选定的语句开始游戏吗？
+
+3943E4
+Return to the title screen?
+返回到主页？
+
+394428
+System data is being saved.
+保存系统存档中
+
+39A32C
+Play Voice
+重放
+
+39A348
+Game Start
+开始
+
 /*
 * 映射文件的输入格式（所有数字均为16进制的形式）
 * 首先是一个数字，代表词条数目
-* 每个词条占三行，第一行有一个数字，为词条所在**PE文件偏移**
+* 每个词条占三行，第一行有一个数字，为词条所在内存的RVA（相对虚拟地址）
 * 第二行为英文原文，用来计算最大字节长度
 * 第三行为翻译中文，要确保中文的utf-8字节数小于等于英文的utf-8字节数，否则本词条将不进行处理
+* 对于原文无法保存下来的字符，可以用*替代（原文只用来计算可写入字节数）
+* （只要原PE文件后面有若干个0，一些字节数过少的单词在记录时可以适当添加一些空格，但一定要保留一个0）
 */
