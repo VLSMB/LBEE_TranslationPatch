@@ -2461,7 +2461,7 @@
   },
   {
     "Source": "Base Wait Time",
-    "Target": "基本等待时间"
+    "Target": "等待时间"
   },
   {
     "Source": "Mask the Saito",
@@ -3168,7 +3168,7 @@
     "Target": "棒球"
   },
   {
-    "Source": "Color of",
+    "Source": "Color of　　　",
     "Target": "已读"
   },
   {
