@@ -442,7 +442,7 @@ namespace LBEE_TranslationPatch
                     msgStr_en = Encoding.Unicode.GetString(command[index..(index + strLength)]);
                 }
             }
-            else if (BattleID == 102)
+            else if (BattleID == 102||BattleID == 103)
             {
                 int Var1 = command[index] + command[index + 1] * 256;
                 if (Var1 == 0)
@@ -575,7 +575,7 @@ namespace LBEE_TranslationPatch
                 newCommand.AddRange(command.Skip(index));
                 return newCommand.ToArray();
             }
-            else if (BattleID == 102)
+            else if (BattleID == 102 || BattleID == 103)
             {
                 string Translation = PostProcessText(inJsonObj["Translation"]?.Value<string>() ?? "");
                 foreach (var newChar in Translation.ToCharArray())
@@ -616,10 +616,11 @@ namespace LBEE_TranslationPatch
                     if (Translation2 != null)
                     {
                         int strLength = GetSingleByteStrLength(command, index);
+                        newCommand.AddRange(command[index..(index + strLength + 1)]);
                         index += strLength + 1; // Skip ExprStr
                         strLength = GetStrLength(command, index);
+                        newCommand.AddRange(command[index..(index + strLength + 2)]);
                         index += strLength + 2;
-                        newCommand.AddRange(command[..index]);
                         strLength = GetStrLength(command, index);
                         newCommand.AddRange(Encoding.Unicode.GetBytes(Translation2));
                         newCommand.Add(0);
@@ -633,10 +634,11 @@ namespace LBEE_TranslationPatch
                     if (Translation3 != null)
                     {
                         int strLength = GetSingleByteStrLength(command, index);
+                        newCommand.AddRange(command[index..(index + strLength + 1)]);
                         index += strLength + 1; // Skip ExprStr
                         strLength = GetStrLength(command, index);
+                        newCommand.AddRange(command[index..(index + strLength + 2)]);
                         index += strLength + 2;
-                        newCommand.AddRange(command[..index]);
                         strLength = GetStrLength(command, index);
                         newCommand.AddRange(Encoding.Unicode.GetBytes(Translation3));
                         index += strLength;

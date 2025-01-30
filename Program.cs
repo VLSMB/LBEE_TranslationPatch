@@ -331,6 +331,7 @@
             Console.Write("大概率导致现有存档损坏");
             Console.ResetColor();
             Console.WriteLine("，请使用新存档进行游戏。\n");
+            Console.WriteLine("如果需要恢复原版，请删除游戏文件夹下的dxgi.dll，并使用Steam验证游戏文件完整性，会自动还原被修改的文件。\n");
             for (int i = DescriptionWaitingTime; i>0;i--)
             {
                 char[] TimerIcon = ['-', '\\', '|', '/'];
@@ -441,6 +442,84 @@
                     BitConverter.GetBytes(DEBUG_DebugJumpPtr).Reverse());
                 JumpCommands.AddRange(JumpCommandsPost);
                 File.WriteAllBytes(ExtractedScriptPath + "\\SEEN0513", JumpCommands.ToArray());
+            }
+
+            // 对8500和8501两个脚本进行处理，这两个脚本看起来是专门放字符串的，格式和其他都不一样。
+            var TextScriptNames = new string[] { "SEEN8500", "SEEN8501" };
+            foreach(var TextScriptName in TextScriptNames)
+            {
+                string TextScriptPath = Path.Combine(ExtractedScriptPath, TextScriptName);
+                string TextScriptJson = Path.Combine(TextMappingPath, $"{TextScriptName}.json");
+                byte[] ScirptBuffer = File.ReadAllBytes(TextScriptPath);
+                int StartIndex = 0x0a;
+                bool UseIcon = ScirptBuffer[8] != 1;
+                const int TailLength = 8;  // 尾部固定保留8字节
+                List<string> StrList = new List<string>();
+                List<byte> StrBytes = new List<byte>();
+                List <byte[]> IconBytes = new List<byte[]>();
+                bool NeedParseIcon = UseIcon;
+                for (int i = StartIndex; i < ScirptBuffer.Length - TailLength; i += 2)
+                {
+                    if(NeedParseIcon)
+                    {
+                        IconBytes.Add(ScirptBuffer[i..(i + 3)]);
+                        i++; // i=i+3-2;
+                        NeedParseIcon = false;
+                        continue;
+                    }
+                    if (ScirptBuffer[i] == 0 && ScirptBuffer[i + 1] == 0)
+                    {
+                        StrList.Add(Encoding.Unicode.GetString(StrBytes.ToArray()));
+                        StrBytes.Clear();
+                        if(UseIcon && StrList.Count % 2==0)
+                        {
+                            NeedParseIcon = true;
+                        }
+                    }
+                    else
+                    {
+                        StrBytes.Add(ScirptBuffer[i]);
+                        StrBytes.Add(ScirptBuffer[i + 1]);
+                    }
+                }
+                if (!File.Exists(TextScriptJson))
+                {
+                    JArray TargetJson = new JArray();
+                    foreach (var Str in StrList)
+                    {
+                        TargetJson.Add(Str);
+                    }
+                    File.WriteAllText(TextScriptJson, TargetJson.ToString());
+                }
+                else
+                {
+                    var TargetJson = JArray.Parse(File.ReadAllText(TextScriptJson));
+                    if(TargetJson.Count != StrList.Count)
+                    {
+                        Console.Error.WriteLine("Error: TextScript Json Count Mismatch(" + TextScriptName + "), Exit!");
+                        Environment.Exit(-1);
+                    }
+                    StrList.Clear();
+                    for(int i=0;i<TargetJson.Count;i++)
+                    {
+                        StrList.Add(TargetJson[i].Value<string>() ?? "");
+                    }
+                    List<byte> NewScript = new List<byte>();
+                    NewScript.AddRange(ScirptBuffer[0..StartIndex]);
+                    for (int i = 0; i < StrList.Count; i++)
+                    {
+                        if(UseIcon && i % 2==0)
+                        {
+                            NewScript.AddRange(IconBytes[i / 2]);
+                        }
+                        byte[] TmpStrBytes = Encoding.Unicode.GetBytes(StrList[i]);
+                        NewScript.AddRange(TmpStrBytes);
+                        NewScript.Add(0);
+                        NewScript.Add(0);
+                    }
+                    NewScript.AddRange(ScirptBuffer[(ScirptBuffer.Length - TailLength)..]);
+                    File.WriteAllBytes(TextScriptPath, NewScript.ToArray());
+                }
             }
 
             Process.Start("Files\\lucksystem.exe", $"pak replace -s \"{TemplateLBEEScriptPak}\" -i \"{ExtractedScriptPath}\" -o \"{LBEEScriptPak}\"").WaitForExit();

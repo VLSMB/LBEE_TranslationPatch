@@ -295,14 +295,38 @@
       "Translation": "吹起一个小气球并放在地上！"
     },
     {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "（共计",
+      "JP2": "個の風船が転がっている）",
+      "EN2": " balloons lie on the ground.)",
+      "Translation2": "个气球被放在了地上）"
+    },
+    {
       "JP": "はゴム風船・中を膨らませて地面に置いた！",
       "EN": " inflates a medium-sized balloon and leaves it on the ground! ",
       "Translation": "吹起一个中气球并放在地上！"
     },
     {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "(A total of ",
+      "JP2": "個の風船が転がっている）",
+      "EN2": " balloons lie on the ground.)",
+      "Translation2": " balloons lie on the ground.)"
+    },
+    {
       "JP": "はゴム風船・大を膨らませて地面に置いた！",
       "EN": " inflates a large-sized balloon and leaves it on the ground! ",
       "Translation": "吹起一个大气球并放在地上！"
+    },
+    {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "(A total of ",
+      "JP2": "個の風船が転がっている）",
+      "EN2": " balloons lie on the ground.)",
+      "Translation2": " balloons lie on the ground.)"
     },
     {
       "JP": "は噛み捨てたガムを地面に投げた！",
@@ -636,6 +660,14 @@
       "Translation2": "的脸！"
     },
     {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "（共计",
+      "JP2": "個の洗濯バサミを挟んでいる）",
+      "EN2": " laundry pegs on face)",
+      "Translation2": "个衣夹挂在脸上）"
+    },
+    {
       "JP": "はアルミピンチを",
       "EN": " attaches an aluminium peg to ",
       "Translation": "用铝夹夹住",
@@ -644,12 +676,28 @@
       "Translation2": "的脸！"
     },
     {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "（共计",
+      "JP2": "個のアルミピンチを挟んでいる）",
+      "EN2": " aluminium pegs on face)",
+      "Translation2": "个铝夹挂在脸上）"
+    },
+    {
       "JP": "はクリップ式小型扇風機を",
       "EN": " attaches a small clip-on fan to ",
       "Translation": "用小型夹扇夹住",
       "JP2": "の顔に挟んだ！",
       "EN2": "'s face!",
       "Translation2": "的脸！"
+    },
+    {
+      "JP": "（合計",
+      "EN": "(A total of ",
+      "Translation": "(A total of ",
+      "JP2": "個のクリップ式小型扇風機を挟んでいる）",
+      "EN2": " small clip fans on face)",
+      "Translation2": " small clip fans on face)"
     },
     {
       "JP": "はおもちゃのナイフで刺した！",
@@ -1776,9 +1824,41 @@
       "Translation": "被卫生纸缠住了！"
     },
     {
+      "JP": "現在",
+      "EN": "The count is up to ",
+      "Translation": "现在",
+      "JP2": "カウント！",
+      "EN2": "!",
+      "Translation2": "的倒计时！"
+    },
+    {
       "JP": "９９９９カウントに到達！",
       "EN": "9999 achieved! ",
       "Translation": "达到了9999计数！"
+    },
+    {
+      "JP": "一個目は",
+      "EN": "First die is ",
+      "Translation": "第一个是",
+      "JP2": "　",
+      "EN2": " ",
+      "Translation2": " "
+    },
+    {
+      "JP": "二個目は",
+      "EN": "Second die is ",
+      "Translation": "第二个是",
+      "JP2": "　",
+      "EN2": " ",
+      "Translation2": " "
+    },
+    {
+      "JP": "三個目は",
+      "EN": "Third die is ",
+      "Translation": "第三个是",
+      "JP2": "　",
+      "EN2": " ",
+      "Translation2": " "
     },
     {
       "JP": "ゾロ目が出た！",
