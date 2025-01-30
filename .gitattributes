@@ -1,2 +1,3 @@
 LuckSystem/**  linguist-vendored
-DxHook/**  linguist-vendored
+DxHook/rapidjson/**  linguist-vendored
+DxHook/UltimateProxyDLL.h  linguist-vendored
