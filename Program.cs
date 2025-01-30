@@ -651,6 +651,7 @@
                 string AllNewCharFile36 = Path.Combine(TMPPath, "AllNewChar36.txt");
                 File.WriteAllText(AllNewCharFile36, AllNewChar36);
                 Process.Start("Files\\lucksystem.exe", $"font edit -s \"{ExtractedFontPath}\\{FontTemplate}36\" -i {Charset36.Length} -S \"{ExtractedFontPath}\\info36\" -f \"{TargetFontPath}\" -c \"{AllNewCharFile36}\" -o \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36.png")}\" -O \"{Path.Combine(PendingReplacePath, $"info36")}\"").WaitForExit();
+                //Process.Start("Files\\lucksystem.exe", $"font edit -s \"{ExtractedFontPath}\\{FontTemplate}36\" -a -S \"{ExtractedFontPath}\\info36\" -f \"{TargetFontPath}\" -c \"{AllNewCharFile36}\" -o \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36.png")}\" -O \"{Path.Combine(PendingReplacePath, $"info36")}\"").WaitForExit();
                 Process.Start("Files\\czutil.exe", $"replace \"{ExtractedFontPath}\\{FontTemplate}36\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36.png")}\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36")}\"").WaitForExit();
                 File.Delete(Path.Combine(PendingReplacePath, $"{FontTemplate}36.png"));
                 foreach (var fName in FontName)
