@@ -49,7 +49,9 @@
     {
       "JP": "地震攻撃！　",
       "EN": "Earthquake Attack! ",
-      "Translation": "地震攻击！　"
+      "Translation": "地震攻击！　",
+      "EN2": " takes $v(#20002) damage!",
+      "Translation2": "受到了$v(#20002)点伤害!"
     },
     {
       "JP": "侵入成功！　",
