@@ -93,6 +93,7 @@
 #endif
         static string LBEE_EXE = "";
         static string LBEECharset = @".\Files\Charset.txt";
+        static string LBEECharset36 = @".\Files\Charset36.txt";
         static string TMPPath = Path.GetFullPath(@".\.tmp");
         static string TextMappingPath = Path.GetFullPath(@".\TextMapping");
         static string ImageMappingPath = Path.GetFullPath(@".\ImageMapping");
@@ -322,8 +323,7 @@
             Console.WriteLine("《Little Busters! English Edition》汉化程序 ——By JackMyth\n");
             Console.WriteLine("参考了来自LittleBusters贴吧的翻译文本，替换了原有的英文。仅支持Steam正式版本。");
             Console.WriteLine("应用补丁后切换至英文即可看到汉化翻译。\n");
-            Console.WriteLine("已知问题：\n由于SteamDRM的保护，部分文本无法汉化，如界面文本，菜单，战斗时部分文本等。");
-            Console.WriteLine("为避免查看历史文本出现Bug，限制了选项的字库，部分选项显示为繁体中文。\n");
+            Console.WriteLine("已知问题：\n为避免查看历史文本出现Bug，限制了选项的字库，部分选项显示为繁体中文。\n");
             Console.WriteLine("若发现文本错误或遗漏，或汉化后游戏存在Bug，请访问 https://github.com/Jack-Myth/LBEE_TranslationPatch 并提交Issue，欢迎讨论。\n");
             Console.Write("请注意，汉化程序会修改游戏脚本，");
             Console.BackgroundColor = ConsoleColor.White;
@@ -446,7 +446,8 @@
 
             // 对8500和8501两个脚本进行处理，这两个脚本看起来是专门放字符串的，格式和其他都不一样。
             var TextScriptNames = new string[] { "SEEN8500", "SEEN8501" };
-            foreach(var TextScriptName in TextScriptNames)
+            HashSet<char> TitleUsedCharset = new HashSet<char>(); // 称号所需的字符集后面要单独处理
+            foreach (var TextScriptName in TextScriptNames)
             {
                 string TextScriptPath = Path.Combine(ExtractedScriptPath, TextScriptName);
                 string TextScriptJson = Path.Combine(TextMappingPath, $"{TextScriptName}.json");
@@ -514,6 +515,10 @@
                         }
                         byte[] TmpStrBytes = Encoding.Unicode.GetBytes(StrList[i]);
                         NewScript.AddRange(TmpStrBytes);
+                        foreach(char StrChar in StrList[i])
+                        {
+                            TitleUsedCharset.Add(StrChar);
+                        }
                         NewScript.Add(0);
                         NewScript.Add(0);
                     }
@@ -531,8 +536,8 @@
             var FontSize = new int[]
             {
                 // 这些字体貌似有点问题,重绘后会导致游戏崩溃，先放着不动
-                //12,14,72,36,16,
-                18,20,24,28,30,32
+                //12,14,36,72
+                16,18,20,24,28,30,32
                 //28
             };
 
@@ -623,6 +628,36 @@
                     if (fName != FontTemplate)
                     {
                         File.Copy(Path.Combine(PendingReplacePath, $"{FontTemplate}{fSize}"), Path.Combine(PendingReplacePath, $"{fName}{fSize}"));
+                    }
+                }
+            }
+
+            {
+                string Charset36 = File.ReadAllText(LBEECharset36);
+                HashSet<char> Charset36Set = new HashSet<char>();
+                foreach (char c in Charset36)
+                {
+                    Charset36Set.Add(c);
+                }
+                List<char> PendingAddChar = new List<char>();
+                foreach (char c in TitleUsedCharset)
+                {
+                    if (!Charset36Set.Contains(c))
+                    {
+                        PendingAddChar.Add(c);
+                    }
+                }
+                string AllNewChar36 = new string(PendingAddChar.ToArray());
+                string AllNewCharFile36 = Path.Combine(TMPPath, "AllNewChar36.txt");
+                File.WriteAllText(AllNewCharFile36, AllNewChar36);
+                Process.Start("Files\\lucksystem.exe", $"font edit -s \"{ExtractedFontPath}\\{FontTemplate}36\" -i {Charset36.Length} -S \"{ExtractedFontPath}\\info36\" -f \"{TargetFontPath}\" -c \"{AllNewCharFile36}\" -o \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36.png")}\" -O \"{Path.Combine(PendingReplacePath, $"info36")}\"").WaitForExit();
+                Process.Start("Files\\czutil.exe", $"replace \"{ExtractedFontPath}\\{FontTemplate}36\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36.png")}\" \"{Path.Combine(PendingReplacePath, $"{FontTemplate}36")}\"").WaitForExit();
+                File.Delete(Path.Combine(PendingReplacePath, $"{FontTemplate}36.png"));
+                foreach (var fName in FontName)
+                {
+                    if (fName != FontTemplate)
+                    {
+                        File.Copy(Path.Combine(PendingReplacePath, $"{FontTemplate}36"), Path.Combine(PendingReplacePath, $"{fName}36"));
                     }
                 }
             }
